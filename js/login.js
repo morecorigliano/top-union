@@ -5,7 +5,7 @@ var ingresar = document.getElementById("ingresar");
 
 ingresar.addEventListener("submit", function(e){
   e.preventDefault();
-  window.location.href = "/home.html";
+  window.location.href = "home.html";
 });
 
 hideToggle.addEventListener('click', showHidePassword);

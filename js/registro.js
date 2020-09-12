@@ -124,5 +124,5 @@ function showPersonalizar(){
 
 personalizar.addEventListener("submit", function(e){
     e.preventDefault();
-    window.location.href = "../registro/bienvenida.html"
+    window.location.href = "bienvenida.html"
 });

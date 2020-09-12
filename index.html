@@ -42,31 +42,32 @@
               </g>
             </g>
         </svg>
-        <div id="register">
-            <div class="option">
-                <p class="label">Soy profesional</p>
-                <a href="registro/profesional-registro.html">
-                    <p>Busco trabajo</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.621 24.243">
-                        <path id="Trazado_1" data-name="Trazado 1" class="cls-1" d="M638.2,150.812l10-10,10,10" transform="translate(152.934 -636.079) rotate(90)"/>
-                    </svg>
-                </a>
+        <form id="ingresar" method="post" action="">
+
+          <input type="email" required placeholder="Correo electrónico">
+          <div id="password">
+            <div id="hide-toggle">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.973 14.101">
+                  <g id="Grupo_178" data-name="Grupo 178" transform="translate(-746.41 -523.045)">
+                    <g id="Grupo_172" data-name="Grupo 172" transform="translate(746.41 523.045)">
+                      <path id="Trazado_195" data-name="Trazado 195" d="M758.94,523.148a14.824,14.824,0,0,1,7.708,2.44,21.664,21.664,0,0,1,4.505,3.681,1.845,1.845,0,0,1,.024,1.734,19.652,19.652,0,0,1-9.586,5.825,12.369,12.369,0,0,1-7.695-.72,21.585,21.585,0,0,1-7.137-4.924,1.233,1.233,0,0,1-.345-.878,1.65,1.65,0,0,1,.554-1.415,19.792,19.792,0,0,1,8.7-5.289c1.058-.279,2.165-.376,3.249-.557Zm-.081,13.066a6.077,6.077,0,1,0-6.054-6.106A6.072,6.072,0,0,0,758.859,536.214Z" transform="translate(-746.41 -523.045)" fill="#707070"/>
+                    </g>
+                    <circle id="Elipse_47" data-name="Elipse 47" cx="3.979" cy="3.979" r="3.979" transform="translate(754.914 526.108)" fill="#707070"/>
+                  </g>
+              </svg>
+              <span id="hidden"></span>
             </div>
-            <div class="option">
-                <p class="label">Soy empresa</p>
-                <a href="">
-                    <p>Busco profesionales</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.621 24.243">
-                        <path id="Trazado_1" data-name="Trazado 1" class="cls-1" d="M638.2,150.812l10-10,10,10" transform="translate(152.934 -636.079) rotate(90)"/>
-                    </svg>
-                </a>
-            </div>
-        </div>
-        <div id="login">
-            <p>¿Ya tenés una cuenta?</p>
-            <a href="">Ingresar</a>
+            <input type="password" required maxlength = "15" minlength="6" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}" placeholder="Contraseña" id="password-input">
+          </div>
+          <input type="submit" value="Ingresar" id="ingresar-btn">
+      
+        </form>
+        <div id="register-btn">
+            <p>¿Aún no tienes una cuenta?</p>
+            <a href="registro/registro.html">Registrarse</a>
         </div>
     </div>
  
 </body>
+<script src="js/login.js"></script>
 </html>

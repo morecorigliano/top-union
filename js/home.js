@@ -15,3 +15,24 @@ function openSearchForm(){
     filters.style.display = "none";
     searchWrp.style.display = "none";
 }
+
+var saveBtn= document.getElementsByClassName("save-btn");
+
+for (var x = 0; x < saveBtn.length; x++){
+    saveBtn[x].addEventListener('click', function(){
+        if(this.classList.contains("saved")){
+            this.classList.remove("saved");
+        }else{
+            this.classList.add("saved");
+        }
+    })
+};
+
+var postularmeBtn = document.getElementsByClassName("postularme");
+
+for (var y = 0; y < postularmeBtn.length; y++){
+    postularmeBtn[y].addEventListener('click', function(){
+        this.parentElement.parentElement.classList.add("postulado");
+        this.innerHTML = "Postulado";
+    })
+};

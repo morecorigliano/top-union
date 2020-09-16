@@ -1,5 +1,6 @@
 var navToggle = document.getElementById("profile-nav-toggle");
 var navList = document.getElementById("profile-nav");
+var navWrp = document.getElementById("profile-nav-wrp");
 var navListItem = document.getElementsByClassName("option");
 var linesWrp = document.getElementById("lines-wrp");
 var lineOne = document.getElementById("line-one");
@@ -30,6 +31,7 @@ function openNav(){
     lineTwo.style.opacity = "0";
     lineThree.style.transform = "rotate(-45deg) scale(0.9)";
     darken.style.display = "block";
+    navWrp.style.zIndex = "150000";
 }
 
 function closeNav(){
@@ -39,4 +41,5 @@ function closeNav(){
     lineTwo.style.opacity = "1";
     lineThree.style.transform = "rotate(0) scale(1) translate(0, 0)";
     darken.style.display = "none";
+    navWrp.style.zIndex = "90000";
 }

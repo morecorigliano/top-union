@@ -1,73 +1,155 @@
 var filterProfesion = document.getElementsByClassName("filter-profesion");
-var empresa = document.getElementById("empresa");
-var profesional = document.getElementById("profesional");
-var empresaLabel = document.getElementById("empresa-label");
-var profesionaLabel = document.getElementById("profesional-label");
-var form = document.getElementById("search-form");
-var profesionWrp = document.getElementById("profesion-wrp");
-var submit = document.getElementById("submit");
+var form = document.getElementsByClassName("search-form");
+var canje = document.getElementById("canje");
+var modelo = document.getElementById("modelo");
+var influencer = document.getElementById("influencer");
+var alquiler = document.getElementById("alquiler");
+var franja = document.getElementsByClassName("franja");
+var fechaPuntual = document.getElementsByClassName("fecha-puntual");
 
 for (var y = 0; y < filterProfesion.length; y++){
     filterProfesion[y].addEventListener('click', function(){
-        form.reset();
-        submit.value = "Encontrar profesional";
+        for (var i = 0; i < form.length; i++) {
+            form[i].reset();
+        }
+        for (var i = 0; i < franja.length; i++) {
+            franja[i].style.display = "none";
+        }
+        for (var i = 0; i < fechaPuntual.length; i++) {
+            fechaPuntual[i].style.display = "block";
+        }
         for (var y = 0; y < filterProfesion.length; y++){
             filterProfesion[y].classList.remove("current");
         }
         this.classList.add("current");
         if(this.classList.contains("canje")){
-            empresaLabel.innerHTML = "Ofrezco canje";
-            profesionaLabel.innerHTML = "Acepto canje";
-            profesionWrp.style.display = "block";
-        }else{
-            profesionWrp.style.display = "none";
+            canje.style.position = "relative";
+            canje.style.transform = "translateX(0)";
+            modelo.style.position = "absolute";
+            modelo.style.transform = "translateX(150vw)";
+            influencer.style.position = "absolute";
+            influencer.style.transform = "translateX(150vw)";
+            alquiler.style.position = "absolute";
+            alquiler.style.transform = "translateX(150vw)";
         }
         if(this.classList.contains("modelo")){
-            empresaLabel.innerHTML = "Busco modelo";
-            profesionaLabel.innerHTML = "Soy modelo";
+            modelo.style.position = "relative";
+            modelo.style.transform = "translateX(0)";
+            canje.style.position = "absolute";
+            canje.style.transform = "translateX(-150vw)";
+            influencer.style.position = "absolute";
+            influencer.style.transform = "translateX(150vw)";
+            alquiler.style.position = "absolute";
+            alquiler.style.transform = "translateX(150vw)";
         }
         if(this.classList.contains("influencer")){
-            empresaLabel.innerHTML = "Busco influencer";
-            profesionaLabel.innerHTML = "Soy influencer";
+            influencer.style.position = "relative";
+            influencer.style.transform = "translateX(0)";
+            canje.style.position = "absolute";
+            canje.style.transform = "translateX(-150vw)";
+            modelo.style.position = "absolute";
+            modelo.style.transform = "translateX(-150vw)";
+            alquiler.style.position = "absolute";
+            alquiler.style.transform = "translateX(150vw)";
         }
-        if(this.classList.contains("actor")){
-            empresaLabel.innerHTML = "Busco actor/actriz";
-            profesionaLabel.innerHTML = "Soy actor/actriz";
+        if(this.classList.contains("alquiler")){
+            alquiler.style.position = "relative";
+            alquiler.style.transform = "translateX(0)";
+            canje.style.position = "absolute";
+            canje.style.transform = "translateX(-150vw)";
+            modelo.style.position = "absolute";
+            modelo.style.transform = "translateX(-150vw)";
+            influencer.style.position = "absolute";
+            influencer.style.transform = "translateX(-150vw)";
         }
-        if(this.classList.contains("fotografo")){
-            empresaLabel.innerHTML = "Busco fotógrafo/a";
-            profesionaLabel.innerHTML = "Soy fotógrafo/a";
+    })
+}
+/////// cambiar formato de fecha ///////
+
+var puntualOption = document.getElementsByClassName("puntual-option");
+
+var franjaOption = document.getElementsByClassName("franja-option");
+
+for (var i = 0; i < puntualOption.length; i++) {
+    puntualOption[i].addEventListener('click', function(){
+        for (var i = 0; i < fechaPuntual.length; i++) {
+            fechaPuntual[i].style.display = "block";
         }
-        if(this.classList.contains("camarografo")){
-            empresaLabel.innerHTML = "Busco camarógrafo/a";
-            profesionaLabel.innerHTML = "Soy camarógrafo/a";
+        for (var i = 0; i < franja.length; i++) {
+            franja[i].style.display = "none";
         }
-        if(this.classList.contains("maquillador")){
-            empresaLabel.innerHTML = "Busco maquillador/a";
-            profesionaLabel.innerHTML = "Soy maquillador/a";
-        }
-        if(this.classList.contains("productor")){
-            empresaLabel.innerHTML = "Busco productor/a";
-            profesionaLabel.innerHTML = "Soy productor/a";
-        }
-        if(this.classList.contains("editor")){
-            empresaLabel.innerHTML = "Busco editor/a";
-            profesionaLabel.innerHTML = "Soy editor/a";
-        }
-        if(this.classList.contains("equipos")){
-            empresaLabel.innerHTML = "Quiero alquilar equipos";
-            profesionaLabel.innerHTML = "Alquilo equipos";
-        }
-        if(this.classList.contains("locaciones")){
-            empresaLabel.innerHTML = "Quiero alquilar locaciones";
-            profesionaLabel.innerHTML = "Alquilo locaciones";
-        }
-})
+    });
 }
 
-empresa.addEventListener('click', function(){
-    submit.value = "Encontrar profesional";
+for (var i = 0; i < franjaOption.length; i++) {
+    franjaOption[i].addEventListener('click', function(){
+        for (var i = 0; i < fechaPuntual.length; i++) {
+            fechaPuntual[i].style.display = "none";
+        }
+        for (var i = 0; i < franja.length; i++) {
+            franja[i].style.display = "block";
+        }
+    });
+}
+
+/////// canje ///////
+
+var submitCanje = document.getElementById("submit-canje");
+var ofrezcoCanje = document.getElementById("ofrezco-canje");
+var buscoCanje = document.getElementById("busco-canje");
+var profesionOfrezco = document.getElementById("profesion-ofrezco");
+var profesionBusco = document.getElementById("profesion-busco");
+
+ofrezcoCanje.addEventListener('click', function(){
+    profesionOfrezco.style.display = "block";
+    profesionBusco.style.display = "none";
+    submitCanje.value = "Buscar profesional";
 });
-profesional.addEventListener('click', function(){
-    submit.value = "Encontrar trabajo";
+
+buscoCanje.addEventListener('click', function(){
+    profesionOfrezco.style.display = "none";
+    profesionBusco.style.display = "block";
+    submitCanje.value = "Buscar canje";
+});
+
+/////// modelo ///////
+
+var buscoModelo = document.getElementById("busco-modelo");
+var soyModelo = document.getElementById("soy-modelo");
+var submitModelo = document.getElementById("submit-modelo");
+
+buscoModelo.addEventListener('click', function(){
+    submitModelo.value = "Buscar modelo";
+});
+
+soyModelo.addEventListener('click', function(){
+    submitModelo.value = "Buscar trabajo";
+});
+
+/////// influencer ///////
+
+var buscoInfluencer = document.getElementById("busco-influencer");
+var soyInfluencer = document.getElementById("soy-influencer");
+var submitInfluencer = document.getElementById("submit-influencer");
+
+buscoInfluencer.addEventListener('click', function(){
+    submitInfluencer.value = "Buscar influencer";
+});
+
+soyInfluencer.addEventListener('click', function(){
+    submitInfluencer.value = "Buscar trabajo";
+});
+
+/////// alquiler ///////
+
+var buscoAlquilar = document.getElementById("busco-alquilar");
+var alquilo = document.getElementById("alquilo");
+var submitAlquiler = document.getElementById("submit-alquiler");
+
+buscoAlquilar.addEventListener('click', function(){
+    submitAlquiler.value = "Buscar alquileres";
+});
+
+alquilo.addEventListener('click', function(){
+    submitAlquiler.value = "Publicar";
 });

@@ -9,6 +9,7 @@ var fechaPuntual = document.getElementsByClassName("fecha-puntual");
 
 for (var y = 0; y < filterProfesion.length; y++){
     filterProfesion[y].addEventListener('click', function(){
+        publicarInfo.style.display = "none";
         for (var i = 0; i < form.length; i++) {
             form[i].reset();
         }
@@ -191,10 +192,10 @@ soyInfluencer.addEventListener('click', function(){
 
 /////// alquiler ///////
 
-var alquiler = document.getElementById("alquiler");
 var buscoAlquilar = document.getElementById("busco-alquilar");
 var alquilo = document.getElementById("alquilo");
 var submitAlquiler = document.getElementById("submit-alquiler");
+var publicarInfo = document.getElementById("publicar-info");
 
 
 alquiler.addEventListener("submit", function buscoAlquilar(e){
@@ -203,6 +204,7 @@ alquiler.addEventListener("submit", function buscoAlquilar(e){
 });
 
 buscoAlquilar.addEventListener('click', function(){
+    publicarInfo.style.display = "none";
     submitAlquiler.value = "Buscar alquileres";
     alquiler.removeEventListener("submit", alquilo);
     alquiler.addEventListener("submit", function buscoAlquilar(e){
@@ -213,9 +215,10 @@ buscoAlquilar.addEventListener('click', function(){
 
 alquilo.addEventListener('click', function(){
     submitAlquiler.value = "Publicar";
+    publicarInfo.style.display = "block";
     alquiler.removeEventListener("submit", buscoAlquilar);
     alquiler.addEventListener("submit", function alquilo(e){
         e.preventDefault();
-        window.location.href = 'search/alquilo.html';
+        window.location.href = 'home.html';
     });
 });

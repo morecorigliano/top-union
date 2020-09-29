@@ -47,11 +47,9 @@ main {
   justify-content: space-between;
   background-color: #ffffff;
   width: 100%;
-  overflow-x: scroll;
   padding: 2rem;
-  border-bottom: 1px solid #dadada; }
-  #filters::-webkit-scrollbar {
-    display: none; }
+  border-bottom: 1px solid #dadada;
+  position: relative; }
   #filters .filter-profesion {
     display: flex;
     flex-direction: column;
@@ -101,7 +99,8 @@ main {
   overflow-x: hidden; }
 
 .search-form {
-  position: relative;
+  position: absolute;
+  transform: translateX(150vw);
   top: 0;
   left: 0;
   transition: transform 0.3s cubic-bezier(0.18, 0.57, 0.5, 1.03); }
@@ -240,9 +239,39 @@ main {
         background-color: #EF1141; }
     .search-form .form-content .fecha-wrp .franja {
       display: none; }
-  .search-form#modelo, .search-form#influencer, .search-form#alquiler {
-    position: absolute;
-    transform: translateX(150vw); }
+  .search-form#canje {
+    position: relative;
+    transform: none; }
+  .search-form #publicar-info {
+    display: none; }
+    .search-form #publicar-info .time-input {
+      position: relative; }
+      .search-form #publicar-info .time-input input {
+        padding-right: 4rem; }
+      .search-form #publicar-info .time-input p {
+        position: absolute;
+        display: block;
+        right: 1rem;
+        top: 2.2rem;
+        font-size: 1.7rem;
+        font-weight: 500;
+        line-height: 1;
+        letter-spacing: 0.05rem;
+        color: #2b2b2b; }
+    .search-form #publicar-info .price-input {
+      position: relative; }
+      .search-form #publicar-info .price-input input {
+        padding-left: 3rem; }
+      .search-form #publicar-info .price-input p {
+        position: absolute;
+        display: block;
+        left: 1rem;
+        top: 2.2rem;
+        font-size: 1.7rem;
+        font-weight: 500;
+        line-height: 1;
+        letter-spacing: 0.05rem;
+        color: #2b2b2b; }
 
 #main-search {
   padding: 2rem; }
